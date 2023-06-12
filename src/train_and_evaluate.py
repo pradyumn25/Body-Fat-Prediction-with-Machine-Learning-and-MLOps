@@ -53,7 +53,7 @@ def train_and_evaluate(config_path):
     with mlflow.start_run(run_name = mlflow_config['run_name']) as mlops_run:
         print('model logging starts')
 
-        lr = joblib.load('saved_models/decision_tree.joblib')
+        lr = joblib.load('saved_models/random_forest.joblib')
         print(test_x)
 
         predicted_qualities = lr.predict(test_x)

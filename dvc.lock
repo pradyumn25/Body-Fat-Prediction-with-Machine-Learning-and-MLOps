@@ -3,54 +3,50 @@ stages:
   load_data:
     cmd: python src/load_data.py --config=params.yaml
     deps:
-    - path: data_given/winequality.csv
-      md5: ccc8d3507eb151f53f760d36abdef888
-      size: 91998
+    - path: data_given/fatdat.txt
+      md5: 6f271e1f5a473f3c6c2bfa0aeda3f243
+      size: 37758
     - path: src/get_data.py
-      md5: d494728dca9a50f8e53b496e23a1847b
-      size: 765
+      md5: a9d7320070a829778fc52a1cfbb476d3
+      size: 780
     - path: src/load_data.py
-      md5: 7728b25bb56ca87d5147c04e8eac76f2
-      size: 677
+      md5: 219b9369e4b2d6991bfad064a590b516
+      size: 1186
     outs:
-    - path: data/raw/winequality.csv
-      md5: d98e8f2eca228c11c4de1cc96866a54d
-      size: 91998
+    - path: data/raw/fatdat.csv
+      md5: cb35228d56def5ae649fc779e9a81d56
+      size: 18706
   split_data:
     cmd: python src/split_data.py --config=params.yaml
     deps:
-    - path: data/raw/winequality.csv
-      md5: d98e8f2eca228c11c4de1cc96866a54d
-      size: 91998
+    - path: data/raw/fatdat.csv
+      md5: cb35228d56def5ae649fc779e9a81d56
+      size: 18706
     - path: src/split_data.py
       md5: eb4e346c8b973042e38aea6e6332dd89
       size: 1089
     outs:
-    - path: data/processed/test_winequality.csv
-      md5: 01718da3bd6e206060ed00667ca1a389
-      size: 18510
-    - path: data/processed/train_winequality.csv
-      md5: 4bccf4d668cdc60115de42ba74d416ab
-      size: 73633
+    - path: data/processed/test_fatdat.csv
+      md5: 3f7088db07f3c5ac5518e722067496bd
+      size: 3769
+    - path: data/processed/train_fatdat.csv
+      md5: cf2c419da3c60c12b545c43a91ae3a8a
+      size: 14758
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:
-    - path: data/processed/test_winequality.csv
-      md5: 01718da3bd6e206060ed00667ca1a389
-      size: 18510
-    - path: data/processed/train_winequality.csv
-      md5: 4bccf4d668cdc60115de42ba74d416ab
-      size: 73633
+    - path: data/processed/test_fatdat.csv
+      md5: 3f7088db07f3c5ac5518e722067496bd
+      size: 3769
+    - path: data/processed/train_fatdat.csv
+      md5: cf2c419da3c60c12b545c43a91ae3a8a
+      size: 14758
     - path: src/train_and_evaluate.py
-      md5: 6e0e236c304925b544dfd3c6956b12c8
-      size: 4017
-    params:
-      params.yaml:
-        estimators.ElasticNet.params.alpha: 0.9
-        estimators.ElasticNet.params.l1_ratio: 0.4
+      md5: 4ba177614c52085ab8a17a77fecd6e34
+      size: 2889
   log_production_model:
     cmd: python src/log_production_model.py --config=params.yaml
     deps:
     - path: src/log_production_model.py
-      md5: 5916424c073fd05fc97464f2b99f0473
+      md5: 1efff6b7ca5b9397e81d003266ce01da
       size: 2039

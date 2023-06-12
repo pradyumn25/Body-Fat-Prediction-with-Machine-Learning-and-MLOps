@@ -12,97 +12,124 @@ WineQuality
 
 
 {% block body %}
+
+
 <!-- nav bar -->
 
 <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="/">WineQualityPrediction</a>
+    <a class="navbar-brand" href="/">Body Fat Prediction</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="https://github.com/c17hawke/dvc-plus-cml-test">source code</a>
+                <a class="nav-link" href="https://github.com/pradyumn25/Body-Fat-Prediction-with-Machine-Learning-and-MLOps">Get Code</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="https://ieeexplore.ieee.org/abstract/document/9596673">Research Work</a>
+            </li>
+
         </ul>
     </div>
 </nav>
 <div>
-    <!-- nav bar ends -->
 
-    <div class="container-fluid masthead">
-        <br>
-        <br>
-        <br>
-        <br>
+<!-- nav bar ends -->
+<div class="main">
+
+        <section class="main_heading my-5">
+            <div class="text-center">
+                <h1 class="display-4">Body Fat Calculator</h1>
+                <hr class="w-25 mx-auto">
+            </div>
+        </section>
+    
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <form method="POST">
-                        <!-- Input block-->
-                        <div class="form-group">
-                            <label for="translation">
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Enter the details as indicated:</p>
-                                </blockquote>
-                            </label>
-                            <input class="form-control" name="fixed_acidity" rows="1"
-                                placeholder="fixed acidity expected range 4.6 to 15.9"></input>
-                            <input class="form-control" name="volatile_acidity" rows="1"
-                                placeholder="volatile acidity expected range 0.12 to 1.58"></input>
-                            <input class="form-control" name="citric_acid" rows="1"
-                                placeholder="citric acid expected range 0.0 to 1.0"></input>
-                            <input class="form-control" name="residual_sugar" rows="1"
-                                placeholder="residual sugar expected range 0.9 to 15.5"></input>
-                            <input class="form-control" name="chlorides" rows="1" 
-                                placeholder="chlorides expected range 0.012 to 0.611"></input>
-                            <input class="form-control" name="free_sulfur_dioxide" rows="1"
-                                placeholder="free sulfur dioxide expected range 1.0 to 72.0"></input>
-                            <input class="form-control" name="total_sulfur_dioxide" rows="1"
-                                placeholder="total sulfur dioxide expected range 6.0 to 289.0"></input>
-                            <input class="form-control" name="density" rows="1" 
-                                placeholder="density expected range 0.99007 to 1.00369"></input>
-                            <input class="form-control" name="pH" rows="1" 
-                                placeholder="pH expected range 2.74 to 4.01"></input>
-                            <input class="form-control" name="sulphates" rows="1" 
-                                placeholder="sulphates expected range 0.33 to 2.0"></input>
-                            <input class="form-control" name="alcohol" rows="1" 
-                                placeholder="alcohol expected range 8.4 to 14.9"></input>
+            <div class="col-xxl-8 col-10 col-md-8 mx-auto my-5">
 
-                        </div>
+              <form class="row g-3" method="POST">
 
-                        <!-- Select output language here. -->
-                        <div class="form-group">
-                        </div>
-                        <button type="submit" class="btn btn-primary mb-2">Predict</button></br>
-                        </br>
-                    </form>
-                    <!-- Translated text returned by the Translate API is rendered here. -->
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Age</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="age" required="">
                 </div>
-                <div class="col">
-                    <form>
-                        <div class="form-group">
-                            <label for="translation-result">
-
-                                <blockquote class="blockquote">
-                                    <p class="mb-2">Prediction:</p>
-                                </blockquote>
-
-                            </label>
-                            <textarea readonly class="form-control" id="exTextarea" rows="5">{{ response }}</textarea>
-                        </div>
-                    </form>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Weight (in Pounds.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="weight" required="">
                 </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Height (in inches.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="height" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Neck (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="neck" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Chest (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="chest" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Abdomen (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="abdomen" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Hip (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="hip" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Thigh (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="thigh" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Knee (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="knee" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Ankle (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="ankle" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Biceps (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="biceps" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Forearm (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="forearm" required="">
+                </div>
+                <div class="col-md-4">
+                <label for="validationDefault02" class="form-label">Wrist (in cm.)</label>
+                <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" name="wrist" required="">
+                </div>
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                <button class="btn btn-info" type="submit" style="margin: 10px;">Calculate</button>
+                </div>
+
+                </form>
+    
+                <h5 class="card-title d-flex justify-content-center align-items-center flex-column" style="color: red;">{{ response }}</h5>
             </div>
         </div>
+        <div class="text-center">
+            <p>© Copyright www.Mo-fit.in All Rights Reserved.</p>
+        </div>
 
-        {% endblock body %}
+</div>
 
-        {% block custom_js %}
-        <!-- Custom JS -->
-        <script src="{{ url_for('static', filename='script/index.js') }}"></script>
-        {% endblock custom_js %}
+
+
+
+
+
+{% endblock body %}
+
+{% block custom_js %}
+<!-- Custom JS -->
+<script src="{{ url_for('static', filename='script/index.js') }}"></script>
+{% endblock custom_js %}

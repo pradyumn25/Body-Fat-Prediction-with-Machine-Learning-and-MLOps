@@ -1,46 +1,54 @@
 {
-    "fixed_acidity": {
-        "min": 4.6,
-        "max": 15.9
-    },
-    "volatile_acidity": {
-        "min": 0.12,
-        "max": 1.58
-    },
-    "citric_acid": {
+    "age": {
         "min": 0.0,
-        "max": 1.0
+        "max": 100.0
     },
-    "residual_sugar": {
-        "min": 0.9,
-        "max": 15.5
+    "weight": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "chlorides": {
-        "min": 0.012,
-        "max": 0.611
+    "height": {
+        "min": 0.0,
+        "max": 150.0
     },
-    "free_sulfur_dioxide": {
-        "min": 1.0,
-        "max": 72.0
+    "neck": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "total_sulfur_dioxide": {
-        "min": 6.0,
-        "max": 289.0
+    "chest": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "density": {
-        "min": 0.99007,
-        "max": 1.00369
+    "abdomen": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "pH": {
-        "min": 2.74,
-        "max": 4.01
+    "hip": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "sulphates": {
-        "min": 0.33,
-        "max": 2.0
+    "thigh": {
+        "min": 0.0,
+        "max": 1000.0
     },
-    "alcohol": {
-        "min": 8.4,
-        "max": 14.9
+    "knee": {
+        "min": 0.0,
+        "max": 1000.0
+    },
+    "ankle": {
+        "min": 0.0,
+        "max": 1000.0
+    },
+    "biceps": {
+        "min": 0.0,
+        "max": 1000.0
+    },
+    "forearm": {
+        "min": 0.0,
+        "max": 1000.0
+    },
+    "wrist": {
+        "min": 0.0,
+        "max": 1000.0
     }
 }
