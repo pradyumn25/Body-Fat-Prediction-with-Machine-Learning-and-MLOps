@@ -27,16 +27,18 @@ def predict(data):
     config = read_params(params_path)
     model_dir = config['webapp_model_dir']
     model = joblib.load(model_dir) # load the model
-    prediction = model.predict(data).tolist()[0]
+    print(data)
+    prediction = model.predict(data)
+    return round(prediction[0], 3)
 
-    try:
-        if 3 <= prediction <= 8:
-            return prediction
+    # try:
+    #     if 3 <= prediction <= 8:
+    #         return prediction
         
-        else:
-            return NotInRange
-    except NotInRange:
-        return 'Unexpected Results'
+    #     else:
+    #         return NotInRange
+    # except NotInRange:
+    #     return 'Unexpected Results'
      
 def get_schema(schema_path=schema_path):
     with open(schema_path) as json_file:
@@ -69,6 +71,7 @@ def form_response(dict_response):
     if validate_input(dict_response):
         data = dict_response.values()
         data = [list(map(float, data))]
+        # print(data)
         response = predict(data)
 
         return response
@@ -77,7 +80,7 @@ def api_response(dict_request):
     try:
         if validate_input(dict_request):
             data = np.array([list(dict_request.json.values())])
-            response = predict(data)
+            response = predict(data[0])
             response = {'response': response}
             return response
     
