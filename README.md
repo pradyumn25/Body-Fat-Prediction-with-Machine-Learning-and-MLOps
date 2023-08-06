@@ -1,5 +1,5 @@
 # Project Description 
-Website Link (https://bodyfatprediction.azurewebsites.net/)
+Website Link (<a href = "http://ec2-54-86-143-91.compute-1.amazonaws.com:8080" target = "_blank"> Click Here </a>)
 
 This project aimed to develop a machine learning framework using algorithms like Random Forest, Decision Tree, XGBoost, Extra Trees, and KNN to predict obesity levels, bodyweight, and fat percentage. We employed hyperparameter optimization (HPO) algorithms such as Genetic Algorithm, Random Search, Grid Search, and Optuna to improve model accuracy. We implemented continuous integration and continuous deployment (CI/CD) to deploy a user-friendly web app using Python Flask. The app allows users to easily access body fat percentage predictions. Model performance was tracked using DVC and MLflow, while the app was hosted on Azure. In summary, our project provides an accessible framework for predicting body metrics using machine learning, with optimized models and a deployed web app for user convenience
 
